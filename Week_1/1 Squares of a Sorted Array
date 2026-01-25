@@ -1,0 +1,24 @@
+// 977. Squares of a Sorted Array
+
+class Solution {
+    public int[] sortedSquares(int[] nums) {
+        int n = nums.length;
+        int[] ans = new int[n];
+
+        int low = 0;
+        int high = n - 1;
+        int idx = n - 1;
+
+        while (low <= high) {
+            if (Math.abs(nums[low]) > Math.abs(nums[high])) {
+                ans[idx] = nums[low] * nums[low];
+                low++;
+            } else {
+                ans[idx] = nums[high] * nums[high];
+                high--;
+            }
+            idx--;
+        }
+        return ans;
+    }
+}
