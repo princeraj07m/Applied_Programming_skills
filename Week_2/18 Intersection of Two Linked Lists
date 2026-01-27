@@ -1,0 +1,35 @@
+// 160. Intersection of Two Linked Lists
+
+public class Solution {
+    public ListNode findinter(ListNode lhead ,ListNode shead , int n){
+        int temp = n;
+        while(temp > 0){
+            lhead = lhead.next;
+            temp--;
+        }
+        while(lhead != shead){
+            lhead = lhead.next;
+            shead = shead.next;
+        }
+        return shead;
+
+    }
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        int a = 0 ,b = 0;
+        ListNode temp1 = headA;
+        ListNode temp2 = headB;
+        while(temp1 != null){
+            a++;
+            temp1 = temp1.next;
+        }
+        while(temp2 != null){
+            b++;
+            temp2 = temp2.next;
+        }
+        if(a>b){
+            return findinter(headA ,headB , a-b);
+        }else{
+            return findinter(headB ,headA , b-a);
+        }
+    }
+}

@@ -1,0 +1,23 @@
+// 234. Palindrome Linked List
+
+class Solution {
+    public boolean isPalindrome(ListNode head) {
+        ListNode new1 = head;
+        ListNode slow = head.next;
+        ListNode fast = head;
+        while(fast != null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+
+        while(slow != null && slow.next != null){
+            if(slow.val != new1.val){
+                return false;
+            }
+            slow = slow.next;
+            new1 = new1.next;
+        }
+        return true;
+        
+    }
+}
