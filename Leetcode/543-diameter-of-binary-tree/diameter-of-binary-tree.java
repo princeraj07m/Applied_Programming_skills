@@ -32,7 +32,6 @@ class Solution {
         if(root==null){
             return 0;
         }
-
         height(root);
         return ans;
     }
