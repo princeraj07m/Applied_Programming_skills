@@ -1,7 +1,7 @@
 class Solution {
     public boolean lemonadeChange(int[] bills) {
      
-        int five = 0,ten = 0,fifteen=0,twenty =0;
+        int five = 0,ten = 0;
         for(var num : bills){
             if(num == 5){
                 five++;
