@@ -6,15 +6,10 @@ class Solution {
 
         if (dp[idx] != -1) return dp[idx];
 
-        int mini = Integer.MAX_VALUE;
+        int mini = (int)1e9;
 
         for (int i = 1; i <= nums[idx]; i++) {
-
-            int ans = f(idx + i, nums, dp);
-
-            if (ans != Integer.MAX_VALUE) {
-                mini = Math.min(mini, 1 + ans);
-            }
+            mini = Math.min(mini, 1 + f(idx + i, nums, dp));
         }
 
         return dp[idx] = mini;
