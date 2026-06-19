@@ -4,8 +4,8 @@ class Solution {
 
         for (int num : nums) {
             String s = String.valueOf(num);
-            for (char ch : s.toCharArray()) {
-                list.add(ch - '0');
+            for(char ch : s.toCharArray()){
+                list.add(ch-'0');
             }
         }
 
