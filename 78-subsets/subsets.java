@@ -1,5 +1,5 @@
 class Solution {
-    void f(int[] nums, int i, int n, List<Integer> ds, HashSet<List<Integer>> ans) {
+    void f(int[] nums, int i, int n, List<Integer> ds, List<List<Integer>> ans) {
         if (i >= n) {
             List<Integer> temp = new ArrayList<>(ds);
             Collections.sort(temp);
@@ -17,11 +17,10 @@ class Solution {
 
     public List<List<Integer>> subsets(int[] nums) {
         int n = nums.length;
-        HashSet<List<Integer>> ans = new HashSet<>();
+        List<List<Integer>> ans = new ArrayList<>();
         List<Integer> ds = new ArrayList<>();
         f(nums, 0, n, ds, ans);
 
-        List<List<Integer>> fans = new ArrayList<>(ans);
-        return fans;
+        return ans;
     }
 }
