@@ -16,6 +16,7 @@ class Solution {
     void f(int[] arr) {
         int i = 0;
         int j = arr.length - 1;
+        //find pivot from right of arr
         int pivot1 = -1;
         for (int idx = j - 1; idx >= 0; idx--) {
             if (arr[idx] < arr[idx + 1]) {
@@ -28,6 +29,7 @@ class Solution {
             reverse(arr, 0, arr.length - 1);
             return;
         }
+        // find pivot 2 from right that is just larger then pivot 1
         int pivot2 = -1;
         for (int idx = j; idx > pivot1; idx--) {
             if (arr[idx] > arr[pivot1]) {
@@ -35,7 +37,9 @@ class Solution {
                 break;
             }
         }
+        //swap pivot 1 and 2
         swap(arr, pivot1, pivot2);
+        // reverwse after pivot 1
         reverse(arr, pivot1 + 1, arr.length - 1);
 
     }
